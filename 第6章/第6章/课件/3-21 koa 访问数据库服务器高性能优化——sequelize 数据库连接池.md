@@ -1,3 +1,17 @@
+项目架构升级优化
+
+dao文件夹需要改造，因为到了后面 繁多的dao配合model 会造成维护困难
+
+后面还会有service层，改造思路：
+
+新建一个mudules文件夹，响应的每个模块都有对应的dao，service，model
+
+通用的dao直接放在mudules文件夹下就行了
+
+方案3的装饰器模型应该直接放在modules文件夹下
+
+本来src对应的分散的dao，model，方案1的定义模型defineModel以及方案3对应的装饰器模型ormmodel应该都要去掉
+
 # 3-21 koa 访问数据库服务器高性能优化——sequelize 数据库连接池
 
 ##### 1. 为什么要用数据库连接池？

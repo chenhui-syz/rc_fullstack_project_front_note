@@ -12,6 +12,7 @@ collate：指定字符集的默认校对规则，这个在Navicat操作新建数
 
 ```ts
 create database  IF NOT EXISTS test CHARACTER SET utf8mb4  COLLATE utf8mb4_general_ci;
+create database  IF NOT EXISTS dangdang CHARACTER SET utf8mb4  COLLATE utf8mb4_general_ci;
 ```
 
 **查看数据库**：

@@ -1,7 +1,7 @@
 # 3-25 当当书城关联数据准备—MySql 多表内连接
 
 ```ts
-CREATE TABLE `dangdang`.`thirdctgy`  (
+CREATE TABLE `test`.`thirdctgy`  (
   `thirdctgyid` int NOT NULL AUTO_INCREMENT,
   `thirdname` varchar(20) NOT NULL,
   `secctgyid` int NULL,
@@ -29,13 +29,24 @@ insert into thirdctgy(thirdname,secctgyid) values('宗教哲学',6),('历史',6)
 
 select   * from A 表,B表 where A表.主键id=B表.外键id
 
-select   * from A 表 inner join B 表 on A表.主键id=B表.外键id
+~~~
+select * from secondctgy,thirdctgy where secondctgy.secondctgyid=thirdctgy.secctgyid;
+select * from secondctgy sc,thirdctgy tc where sc.secondctgyid=tc.secctgyid;
+// 上面两句话意义相同，只是起了个别名
+~~~
+
+select   * from A 表 inner join B 表 on A表.主键id=B表.外键id      inner join代表链接
+
+~~~
+select * from secondctgy sc inner join thirdctgy tc on sc.secondctgyid=tc.secctgyid;
+// 外连接的写法，和上面的where写法一样
+~~~
 
 select   * from B 表 inner join A 表 on A表.主键id=B表.外键id
 
 
 
-
+xxxxxxxxxx const result=[  {    secondctgyid: 1,    secctgyname: '0-2岁',    firstctgyId: 1,    thirdctgys:[      {        thirdctgyid: 6,        thirdctgyname: '入园准备',        secctgyid: 1      },      {        thirdctgyid: 5,        thirdctgyname: '艺术课堂',        secctgyid: 1      },      {        thirdctgyid: 4,        thirdctgyname: '纸板书',        secctgyid: 1      },    ]  }]js
 
 
 
